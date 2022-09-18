@@ -31,14 +31,14 @@ jobs:
       uses: veracode/veracode-uploadandscan-action@0.2.4
       with:
         # appname
-        appname: # default is ${{ github.repository }}
+        appname: ${{ github.repository }}
         # createprofile
         createprofile: true
         # filepath
         filepath: ./app/target/verademo.war
         # version
-        version: # default is Scan from Github job: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
+        version: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
         # vid
-        vid: 
+        vid: '${{ secrets.VERACODE_API_ID }}'
         # vkey
-        vkey: 
+        vkey: '${{ secrets.VERACODE_API_KEY }}'
